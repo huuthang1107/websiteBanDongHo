@@ -5,7 +5,9 @@
   Time: 12:10 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@page contentType="text/html;charset=UTF-8" language="java"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <html>
 <head>
     <script type="text/javascript" src="danhsach.js"></script>
@@ -201,105 +203,27 @@
                                         <span class="table-add float-right mb-3 mr-2"><a href="#!" class="text-success"> <i class="fas fa-plus fa-2x" aria-hidden="true"></i></a></span>
                                         <table id="bang1" class="table table-bordered table-responsive-md table-striped text-center">
                                             <thead>
+                                            <c:forEach items="${B}" var="bl">
                                             <tr>
-                                                <th class="text-center">Mã Blog</th>
-                                                <th class="text-center">Tên Blog</th>
-                                                <th class="text-center">Ngày tạo</th>
-
+                                                <th class="text-center">"${bl.id}"</th>
+                                                <th class="text-center">"${bl.name}"</th>
+                                                <th class="text-center">"${bl.date_create}"</th>
 
                                                 <th class="text-center">Remove</th>
                                             </tr>
+                                            </c:forEach>
                                             </thead>
                                             <tbody>
 
                                             <tr>
-                                                <td class="pt-3-half" contenteditable="true">A1</td>
-                                                <td class="pt-3-half" contenteditable="true">Màu đồng hồ sang trọng nhất năm nay</td>
-                                                <td class="pt-3-half" contenteditable="true">28/8/2020</td>
-
-
-                                                <td>
-                              <span class="table-remove"><button type="button"
-                                                                 class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
-                                                </td>
-                                            </tr>
-                                            <!-- This is our clonable table line -->
-                                            <tr>
-                                                <td class="pt-3-half" contenteditable="true">A2</td>
-                                                <td class="pt-3-half" contenteditable="true">Đồng hồ chính hiệu</td>
-                                                <td class="pt-3-half" contenteditable="true">27/7/2020</td>
-
-
-                                                <td>
-                              <span class="table-remove"><button type="button"
-                                                                 class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
-                                                </td>
-                                            </tr>
-                                            <!-- This is our clonable table line -->
-                                            <tr>
-                                                <td class="pt-3-half" contenteditable="true">A3</td>
-                                                <td class="pt-3-half" contenteditable="true">Phá cách đồng hồ năm nay</td>
-                                                <td class="pt-3-half" contenteditable="true">27/7/2020</td>
-
-                                                <td>
-                              <span class="table-remove"><button type="button"
-                                                                 class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
-                                                </td>
-                                            </tr>
-                                            <!-- This is our clonable table line -->
-                                            <tr>
-                                                <td class="pt-3-half" contenteditable="true">A4</td>
-                                                <td class="pt-3-half" contenteditable="true">Đồng hồ đính kim cương</td>
-                                                <td class="pt-3-half" contenteditable="true">27/7/2020</td>
-
-                                                <td>
-                              <span class="table-remove"><button type="button"
-                                                                 class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="pt-3-half" contenteditable="true">A5</td>
-                                                <td class="pt-3-half" contenteditable="true">Đồng hồ mạ vàng</td>
-                                                <td class="pt-3-half" contenteditable="true">27/7/2020</td>
-
-                                                <td>
-                              <span class="table-remove"><button type="button"
-                                                                 class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
-                                                </td>
-                                            </tr>
-                                            <!-- This is our clonable table line -->
-                                            <tr>
-                                                <td class="pt-3-half" contenteditable="true">A6</td>
-                                                <td class="pt-3-half" contenteditable="true">Đồng hồ chình hiệu</td>
-                                                <td class="pt-3-half" contenteditable="true">27/7/2020</td>
-                                                <td>
-                              <span class="table-remove"><button type="button"
-                                                                 class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
-                                                </td>
-                                            </tr>
-                                            <!-- This is our clonable table line -->
-                                            <tr>
-                                                <td class="pt-3-half" contenteditable="true">A7</td>
-                                                <td class="pt-3-half" contenteditable="true">Đồng hồ chình hiệu</td>
-                                                <td class="pt-3-half" contenteditable="true">27/7/2020</td>
-
-                                                <td>
-                              <span class="table-remove"><button type="button"
-                                                                 class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
-                                                </td>
-                                            </tr>
-                                            <!-- This is our clonable table line -->
-                                            <tr>
                                                 <td class="pt-3-half" contenteditable="true">A8</td>
                                                 <td class="pt-3-half" contenteditable="true">Đồng hồ chình hiệu</td>
                                                 <td class="pt-3-half" contenteditable="true">27/7/2020</td>
-
                                                 <td>
-                              <span class="table-remove"><button type="button"
-                                                                 class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
+                                                    <span class="table-remove"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
                                                 </td>
                                             </tr>
-                                            </tr>
+
                                             </tbody>
                                         </table>
                                     </div>

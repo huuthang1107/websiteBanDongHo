@@ -1,6 +1,6 @@
 package vn.edu.nlu.controller;
 
-import vn.edu.nlu.entity.DanhMuc;
+import vn.edu.nlu.bean.DanhMuc;
 import vn.edu.nlu.entity.ProductEntity;
 
 import javax.servlet.*;

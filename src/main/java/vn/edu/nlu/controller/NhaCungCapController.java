@@ -1,7 +1,7 @@
 package vn.edu.nlu.controller;
 
 import vn.edu.nlu.entity.ProductEntity;
-import vn.edu.nlu.entity.NhaCungCap;
+import vn.edu.nlu.bean.NhaCungCap;
 
 import javax.servlet.*;
 import javax.servlet.http.*;

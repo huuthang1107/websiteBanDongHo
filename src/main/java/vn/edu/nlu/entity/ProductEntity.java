@@ -1,7 +1,7 @@
 package vn.edu.nlu.entity;
 
 import vn.edu.nlu.ConnectionDB;
-import vn.edu.nlu.bean.Product;
+import vn.edu.nlu.bean.*;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -84,6 +84,36 @@ public class  ProductEntity {
                         rs.getInt(3),
                         rs.getString(4)
 
+                ));
+
+            }
+            rs.close();
+            s.close();
+            return re;
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+            return new LinkedList<>();
+        }
+
+    }
+    public List<BinhLuan> getAllBinhLuan() {
+
+        Statement s = null;
+        try {
+            s = ConnectionDB.connect();
+            List<BinhLuan> re = new LinkedList<>();
+            ResultSet rs = s.executeQuery("SELECT  bl.id , u.id AS maUSer , sp.id AS maSanpham, rt.id as MaDanhGia, bl.`comment`, bl.date_create\n" +
+                    "FROM rating bl JOIN `user` u ON bl.userd_id=u.id JOIN product sp ON bl.pro_id=sp.id \n" +
+                    "JOIN rating_type rt ON bl.rating_type_id=rt.id");
+
+            while (rs.next()) {
+                re.add(new BinhLuan(
+                        rs.getInt(1),
+                        rs.getInt(2),
+                        rs.getInt(3),
+                        rs.getString(5),
+                        rs.getInt(4),
+                        rs.getDate(6)
                 ));
 
             }
@@ -242,7 +272,7 @@ public class  ProductEntity {
     public static void main(String[] args) {
         ProductEntity pe= new ProductEntity();
         pe.count("casio");
-        System.out.println(pe.getAllDanhMuc());
+        System.out.println(pe.getAllBinhLuan());
 
     }
 

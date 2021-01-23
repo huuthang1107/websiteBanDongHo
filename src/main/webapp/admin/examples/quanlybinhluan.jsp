@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Admin
@@ -121,7 +122,7 @@
         <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
             <div class="container-fluid">
                 <div class="navbar-wrapper">
-                    <a class="navbar-brand" style="color:#ff6600 ;" href="quanlybinhluan-copy.html">Danh sách bình luận</a>
+                    <a class="navbar-brand" style="color:#ff6600 ;" href="quanlybinhluan.jsp">Danh sách bình luận</a>
 
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
@@ -201,22 +202,27 @@
                                         <table id="bang1" class="table table-bordered table-responsive-md table-striped text-center">
                                             <thead>
                                             <tr>
+                                                <th class="text-center">Mã bình luận</th>
                                                 <th class="text-center">Mã người dùng</th>
-                                                <th class="text-center">Thời gian</th>
                                                 <th class="text-center">Mã sản phẩm</th>
-                                                <th class="text-center">Bình luận</th>
+                                                <th class="text-center">Nội dung bình luận</th>
+                                                <th class="text-center">Mã đánh giá</th>
+                                                <th class="text-center">Thời gian</th>
 
 
                                                 <th class="text-center">Remove</th>
                                             </tr>
                                             </thead>
                                             <tbody>
+                                            <c:forEach items="${BL}" var="b">
 
                                             <tr>
-                                                <td class="pt-3-half" contenteditable="true">1</td>
-                                                <td class="pt-3-half" contenteditable="true">11/07/2020</td>
-                                                <td class="pt-3-half" contenteditable="true">3536</td>
-                                                <td class="pt-3-half" contenteditable="true">Giao hàng trong bao lâu?</td>
+                                                <td class="pt-3-half" contenteditable="true">"${b.maBinhLuan}"</td>
+                                                <td class="pt-3-half" contenteditable="true">"${b.maNguoiDung}"</td>
+                                                <td class="pt-3-half" contenteditable="true">"${b.maSanPham}"</td>
+                                                <td class="pt-3-half" contenteditable="true">"${b.noidungBL}"</td>
+                                                <td class="pt-3-half" contenteditable="true">"${b.maDanhGia}"</td>
+                                                <td class="pt-3-half" contenteditable="true">"${b.ngay}"</td>
 
 
                                                 <td>
@@ -224,66 +230,8 @@
                                                                  class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
                                                 </td>
                                             </tr>
-                                            <!-- This is our clonable table line -->
-                                            <tr>
-                                                <td class="pt-3-half" contenteditable="true">2</td>
-                                                <td class="pt-3-half" contenteditable="true">10/9/2020</td>
-                                                <td class="pt-3-half" contenteditable="true">3547</td>
-                                                <td class="pt-3-half" contenteditable="true">Trả góp trong bao lâu?</td>
+                                            </c:forEach>
 
-                                                <td>
-                              <span class="table-remove"><button type="button"
-                                                                 class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
-                                                </td>
-                                            </tr>
-                                            <!-- This is our clonable table line -->
-                                            <tr>
-                                                <td class="pt-3-half" contenteditable="true">3</td>
-                                                <td class="pt-3-half" contenteditable="true">23/7/2020</td>
-                                                <td class="pt-3-half" contenteditable="true">6436</td>
-                                                <td class="pt-3-half" contenteditable="true">Đồng hồ rất đẹp</td>
-
-                                                <td>
-                              <span class="table-remove"><button type="button"
-                                                                 class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
-                                                </td>
-                                            </tr>
-                                            <!-- This is our clonable table line -->
-                                            <tr>
-                                                <td class="pt-3-half" contenteditable="true">4</td>
-                                                <td class="pt-3-half" contenteditable="true">23/7/2020</td>
-                                                <td class="pt-3-half" contenteditable="true">6439</td>
-                                                <td class="pt-3-half" contenteditable="true">Có thương hiệu đồng hồ Citizen không ạ</td>
-
-                                                <td>
-                              <span class="table-remove"><button type="button"
-                                                                 class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="pt-3-half" contenteditable="true">5</td>
-                                                <td class="pt-3-half" contenteditable="true">21/10/2020</td>
-                                                <td class="pt-3-half" contenteditable="true">7436</td>
-                                                <td class="pt-3-half" contenteditable="true">Còn hàng đồng hồ casio không ạ</td>
-
-                                                <td>
-                              <span class="table-remove"><button type="button"
-                                                                 class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="pt-3-half" contenteditable="true">6</td>
-                                                <td class="pt-3-half" contenteditable="true">24/7/2020</td>
-                                                <td class="pt-3-half" contenteditable="true">1436</td>
-                                                <td class="pt-3-half" contenteditable="true">Đồng hồ rất đẹp</td>
-
-                                                <td>
-                              <span class="table-remove"><button type="button"
-                                                                 class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
-                                                </td>
-                                            </tr>
-
-                                            </tr>
                                             </tbody>
                                         </table>
                                     </div>

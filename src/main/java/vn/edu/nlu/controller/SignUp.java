@@ -1,7 +1,7 @@
 package vn.edu.nlu.controller;
 
 import vn.edu.nlu.dao.DAO;
-import vn.edu.nlu.entity.User;
+import vn.edu.nlu.bean.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
