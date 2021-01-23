@@ -1,14 +1,14 @@
 package vn.edu.nlu.entity;
 
 import vn.edu.nlu.ConnectionDB;
-<<<<<<< HEAD
+
 import vn.edu.nlu.bean.*;
-=======
+
 import vn.edu.nlu.bean.DanhMuc;
 import vn.edu.nlu.bean.NhaCungCap;
 import vn.edu.nlu.bean.Product;
 import vn.edu.nlu.bean.User;
->>>>>>> d132cd8effd955ab8a0d1de1ab88f17955ecd0c9
+
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -75,6 +75,53 @@ public class  ProductEntity {
             return new LinkedList<>();
         }
 
+    }
+    public List<Product> getAllNam() {
+        Statement s = null;
+        try {
+            s = ConnectionDB.connect();
+            List<Product> re = new LinkedList<>();
+            ResultSet rs = s.executeQuery("select * from product where product.category_id=1");
+            while (rs.next()) {
+                re.add(new Product(
+                        rs.getString(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getLong(4),
+                        rs.getLong(5)
+                ));
+            }
+            rs.close();
+            s.close();
+            return re;
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+            return new LinkedList<>();
+        }
+    }
+
+    public List<Product> getAllCap() {
+        Statement s = null;
+        try {
+            s = ConnectionDB.connect();
+            List<Product> re = new LinkedList<>();
+            ResultSet rs = s.executeQuery("select * from product where product.category_id=3");
+            while (rs.next()) {
+                re.add(new Product(
+                        rs.getString(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getLong(4),
+                        rs.getLong(5)
+                ));
+            }
+            rs.close();
+            s.close();
+            return re;
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+            return new LinkedList<>();
+        }
     }
     public List<DanhMuc> getAllDanhMuc() {
 
