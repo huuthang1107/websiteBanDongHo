@@ -41,6 +41,91 @@ public class  ProductEntity {
         }
 
     }
+    public List<NhaCungCap> getAllNCC() {
+
+        Statement s = null;
+        try {
+            s = ConnectionDB.connect();
+            List<NhaCungCap> re = new LinkedList<>();
+            ResultSet rs = s.executeQuery("select * from suppliers");
+
+            while (rs.next()) {
+                re.add(new NhaCungCap(
+                        rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getInt(4),
+                        rs.getString(5)
+
+                ));
+
+            }
+            rs.close();
+            s.close();
+            return re;
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+            return new LinkedList<>();
+        }
+
+    }
+    public List<DanhMuc> getAllDanhMuc() {
+
+        Statement s = null;
+        try {
+            s = ConnectionDB.connect();
+            List<DanhMuc> re = new LinkedList<>();
+            ResultSet rs = s.executeQuery("select * from categories");
+
+            while (rs.next()) {
+                re.add(new DanhMuc(
+                        rs.getInt(1),
+                        rs.getString(2),
+                        rs.getInt(3),
+                        rs.getString(4)
+
+                ));
+
+            }
+            rs.close();
+            s.close();
+            return re;
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+            return new LinkedList<>();
+        }
+
+    }
+    public List<User> getAllUser() {
+
+        Statement s = null;
+        try {
+            s = ConnectionDB.connect();
+            List<User> re = new LinkedList<>();
+            ResultSet rs = s.executeQuery("select * from user");
+
+            while (rs.next()) {
+                re.add(new User(
+                        rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getInt(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getInt(7),
+                        rs.getString(8)
+                ));
+
+            }
+            rs.close();
+            s.close();
+            return re;
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+            return new LinkedList<>();
+        }
+
+    }
 
     public int insertAll(Collection<Product> map) {
 
@@ -156,7 +241,9 @@ public class  ProductEntity {
 
     public static void main(String[] args) {
         ProductEntity pe= new ProductEntity();
-       pe.count("casio");
+        pe.count("casio");
+        System.out.println(pe.getAllDanhMuc());
+
     }
 
 
