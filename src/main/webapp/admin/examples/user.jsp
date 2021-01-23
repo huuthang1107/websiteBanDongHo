@@ -214,6 +214,7 @@
                                     <div style="float:right;line-height:2cm;margin-right: 80px; font-weight: bold;margin-top: 40px;" >
                                         <div><span > Họ tên: </span><span style="margin-left: 20px;">Đinh Thị Hằng</span></div>
                                         <div><span>Ngày sinh: </span><span style="margin-left: 20px;" > 26/01/2000</span></div>
+                                        <div><span>Ngày sinh: </span><span style="margin-left: 20px;" > 26/01/2000</span></div>
                                         <div><span>Email: </span><span style="margin-left: 20px;">dinhthihang@gmail.com</span></div>
                                         <div><span >Điện thoại: </span><span style="margin-left: 20px;">0888243741</span></div>
                                     </div>

@@ -2,13 +2,11 @@ package vn.edu.nlu.dao;
 
 import vn.edu.nlu.ConnectionDB;
 import vn.edu.nlu.bean.Product;
-import vn.edu.nlu.entity.User;
+import vn.edu.nlu.bean.User;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.ArrayList;
-import java.util.List;
 
 public class DAO {
     Connection conn = null;
