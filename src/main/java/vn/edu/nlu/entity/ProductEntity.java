@@ -1,7 +1,14 @@
 package vn.edu.nlu.entity;
 
 import vn.edu.nlu.ConnectionDB;
+<<<<<<< HEAD
 import vn.edu.nlu.bean.*;
+=======
+import vn.edu.nlu.bean.DanhMuc;
+import vn.edu.nlu.bean.NhaCungCap;
+import vn.edu.nlu.bean.Product;
+import vn.edu.nlu.bean.User;
+>>>>>>> d132cd8effd955ab8a0d1de1ab88f17955ecd0c9
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -159,7 +166,6 @@ public class  ProductEntity {
 
     public int insertAll(Collection<Product> map) {
 
-
         Statement s = null;
         try {
             s = ConnectionDB.connect();
@@ -256,9 +262,6 @@ public class  ProductEntity {
                         rs.getString(3),
                         rs.getLong(4),
                         rs.getLong(5)));
-
-
-
             }
             rs.close();
             s.close();
@@ -268,6 +271,7 @@ public class  ProductEntity {
             return new LinkedList<>();
         }
      }
+
 
     public static void main(String[] args) {
         ProductEntity pe= new ProductEntity();
